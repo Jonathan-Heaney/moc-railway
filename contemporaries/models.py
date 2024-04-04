@@ -20,4 +20,4 @@ class FamousPerson(models.Model):
     hpi = models.FloatField()
 
     def __str__(self):
-        return self.id
+        return self.name
