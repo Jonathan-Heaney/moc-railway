@@ -25,13 +25,11 @@
 
 ### Built with
 
-- Semantic HTML5 markup
+- Python/Django
+- HTML/Django Templating Language
 - CSS
-- Flexbox
 
 ### What I learned
-
-- Using max-width to keep the image inside the container
 
 ### Continued development
 
