@@ -4,6 +4,16 @@ from .models import FamousPerson
 import random
 import urllib.parse
 
+
+valid_persons = FamousPerson.objects.exclude(
+    birthyear__isnull=True
+).exclude(
+    deathyear__isnull=True
+)
+
+person_count = valid_persons.count()
+
+
 # Create your views here.
 
 
@@ -14,4 +24,9 @@ def generate_wikipedia_link(name):
 
 
 def index(request):
-    return render(request, "contemporaries/index.html")
+    random_index = random.randint(0, person_count - 1)
+    person = valid_persons[random_index]
+    return render(request, "contemporaries/index.html", {
+        "person": person,
+        "wikipedia_link": generate_wikipedia_link(person.name)
+    })
