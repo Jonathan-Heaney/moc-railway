@@ -37,6 +37,7 @@
 - Make sure to call load_dotenv() - I didn't at first, I just had load_dotenv, and my database connection didn't work
 - It's possible to nest 'includes' template snippets
 - Not all HTML files need to extend from a base, and they also don't need the HTML skeleton
+- Had a lot of trouble refreshing the page and getting to an actual reset, without generating a new random person. What worked in the end was using @require.POST to set a generation flag, and removing the flag every time the page is rendered with data
 
 ### Continued development
 
