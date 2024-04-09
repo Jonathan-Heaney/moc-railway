@@ -1,14 +1,6 @@
-{% extends "base.html" %}
-
-{% block title %}
-Fame Overlap
-{% endblock %}
-
-{% block content %}
-    {% if fame_overlaps %}
-        <h1 class="list-title">Fame Overlap</h1>
-        {% for person in fame_overlaps %}
-            {% include "contemporaries/includes/person-detail.html" %}
-        {% endfor %}
-    {% endif %}
-{% endblock %}
+{% if fame_overlaps %}
+    <h1 class="list-title">Fame Overlap</h1>
+    {% for person in fame_overlaps %}
+        {% include "contemporaries/includes/person-detail.html" %}
+    {% endfor %}
+{% endif %}

@@ -35,6 +35,8 @@
 - Ran into a bunch of problems adding data to the new database. Ended up using pgAdmin to connect to Amazon RDS database, and then importing the data with a CSV file
   - Also explored a pg_dump/psql tool, which didn't work in this case because of pg_dump version compatibility issues
 - Make sure to call load_dotenv() - I didn't at first, I just had load_dotenv, and my database connection didn't work
+- It's possible to nest 'includes' template snippets
+- Not all HTML files need to extend from a base, and they also don't need the HTML skeleton
 
 ### Continued development
 

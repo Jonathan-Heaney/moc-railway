@@ -1,14 +1,6 @@
-{% extends "base.html" %}
-
-{% block title %}
-Top Overlap
-{% endblock %}
-
-{% block content %}
-    {% if top_overlaps %}
-        <h1 class="list-title">Top Overlap</h1>
-        {% for person in top_overlaps %}
-            {% include "contemporaries/includes/person-detail.html" %}
-        {% endfor %}
-    {% endif %}
-{% endblock %}
+{% if top_overlaps %}
+    <h1 class="list-title">Top Overlap</h1>
+    {% for person in top_overlaps %}
+        {% include "contemporaries/includes/person-detail.html" %}
+    {% endfor %}
+{% endif %}
