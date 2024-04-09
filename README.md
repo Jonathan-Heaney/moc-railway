@@ -34,6 +34,7 @@
 - Had some trouble connecting to the RDS database when I first made migrations. It was because the default db_name is 'postgres'
 - Ran into a bunch of problems adding data to the new database. Ended up using pgAdmin to connect to Amazon RDS database, and then importing the data with a CSV file
   - Also explored a pg_dump/psql tool, which didn't work in this case because of pg_dump version compatibility issues
+- Make sure to call load_dotenv() - I didn't at first, I just had load_dotenv, and my database connection didn't work
 
 ### Continued development
 
