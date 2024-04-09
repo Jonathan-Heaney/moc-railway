@@ -11,8 +11,15 @@ Map of Contemporaries
         <h1 class="title">Map of Contemporaries</h1>
         <h3 class="explainer">Search for a famous historical figure (or click the button to generate a
             random one) and find out whose lives overlapped with theirs!</h3>
+        
+            
         {% include "contemporaries/includes/person-detail.html" %}
-        <button>Generate Random Person</button>
+
+        <form action="{% url 'generate-random' %}" method="get">
+            {% comment %} <input type="hidden" name="generate" value="1"> {% endcomment %}
+            <button type="submit">Generate Random Person</button>
+        </form>
+        
         {% include "contemporaries/top_overlaps.html" %}
         {% include "contemporaries/fame_overlaps.html" %}
     </div>
