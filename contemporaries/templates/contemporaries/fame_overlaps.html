@@ -8,12 +8,7 @@ Fame Overlap
     {% if fame_overlaps %}
         <h1 class="list-title">Fame Overlap</h1>
         {% for person in fame_overlaps %}
-            <div class="person-detail">
-                <a href="{{person.wikipedia_link}}" target="_blank"><h2>{{person.name}}</h2></a> 
-                <p>{{person.occupation}}</p>
-                <p>{{person.birthyear}} - {{person.deathyear}}</p>
-                <p>Fame Score: {{person.hpi}}</p>
-            </div>
+            {% include "contemporaries/includes/person-detail.html" %}
         {% endfor %}
     {% endif %}
 {% endblock %}
