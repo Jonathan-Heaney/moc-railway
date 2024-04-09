@@ -3,5 +3,7 @@
     <p>{{person.occupation}}</p>
     <p>{{person.birthyear}} - {{person.deathyear}}</p>
     <p>Fame Score: {{person.hpi}}</p>
-    {% include "contemporaries/includes/overlap-detail.html" %}
+    {% if person.percentage %}
+        {% include "contemporaries/includes/overlap-detail.html" %}
+    {% endif %}
 </div>

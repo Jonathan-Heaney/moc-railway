@@ -30,7 +30,7 @@ def index(request):
     top_overlaps_data = top_overlap(request, chosen_person_id)
     fame_overlaps_data = fame_overlap(request, chosen_person_id)
     return render(request, "contemporaries/index.html", {
-        "random_person": random_person_data,
+        "person": random_person_data,
         "top_overlaps": top_overlaps_data,
         "fame_overlaps": fame_overlaps_data
     })
