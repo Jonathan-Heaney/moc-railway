@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.views.decorators.http import require_POST
 import os
 from .models import FamousPerson
 import random
@@ -24,15 +25,22 @@ def generate_wikipedia_link(name):
     return f"https://en.wikipedia.org/wiki/{formatted_name}"
 
 
-def index(request):
-    return render(request, "contemporaries/index.html")
+@require_POST
+def set_generation_flag(request):
+    request.session['generate_person'] = True
+    return redirect('main-page')
 
 
-def generate_random(request):
-    random_person_data = random_person(request)
-    chosen_person_id = random_person_data["id"]
-    top_overlaps_data = top_overlap(request, chosen_person_id)
-    fame_overlaps_data = fame_overlap(request, chosen_person_id)
+def main_page(request):
+    if request.session.pop('generate_person', False):
+        # The flag was set, generate random person and overlaps
+        random_person_data = random_person(request)
+        chosen_person_id = random_person_data["id"]
+        top_overlaps_data = top_overlap(request, chosen_person_id)
+        fame_overlaps_data = fame_overlap(request, chosen_person_id)
+    else:
+        # The flag was not set or has been cleared, show default state
+        random_person_data = top_overlaps_data = fame_overlaps_data = None
 
     return render(request, "contemporaries/index.html", {
         "person": random_person_data,

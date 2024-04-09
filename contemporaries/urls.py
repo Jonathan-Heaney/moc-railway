@@ -2,6 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("", views.index, name="index"),
-    path("generate-random/", views.generate_random, name="generate-random")
+    path("", views.main_page, name="main-page"),
+    path("generate/", views.set_generation_flag, name='set-generation-flag')
 ]

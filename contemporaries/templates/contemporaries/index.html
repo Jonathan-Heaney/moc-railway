@@ -15,8 +15,8 @@ Map of Contemporaries
             
         {% include "contemporaries/includes/person-detail.html" %}
 
-        <form action="{% url 'generate-random' %}" method="get">
-            {% comment %} <input type="hidden" name="generate" value="1"> {% endcomment %}
+        <form action="{% url 'set-generation-flag' %}" method="post">
+            {% csrf_token %}
             <button type="submit">Generate Random Person</button>
         </form>
         
