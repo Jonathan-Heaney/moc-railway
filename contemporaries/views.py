@@ -30,3 +30,5 @@ def index(request):
         "person": person,
         "wikipedia_link": generate_wikipedia_link(person.name)
     })
+
+

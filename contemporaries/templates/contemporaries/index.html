@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map of Contemporaries</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}
+Map of Contemporaries
+{% endblock %}
+
+
+{% block content %}
+
     <div class="container">
         <h1 class="title">Map of Contemporaries</h1>
         <h3 class="explainer">Search for a famous historical figure (or click the button to generate a
@@ -19,5 +20,4 @@
         <button>Generate Random Person</button>
     </div>
     
-</body>
-</html>
+{% endblock %}
