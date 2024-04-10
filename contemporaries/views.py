@@ -20,15 +20,11 @@ person_count = valid_persons.count()
 # Create your views here.
 
 
-# Function to generate Wikipedia links for famous people
-def generate_wikipedia_link(name):
-    formatted_name = urllib.parse.quote(name.replace(" ", "_"))
-    return f"https://en.wikipedia.org/wiki/{formatted_name}"
-
-
 @require_POST
 def set_generation_flag(request):
     request.session['generate_person'] = True
+    request.session['hpi_threshold'] = request.POST.get(
+        'hpi', 50)  # Default to 50 if not provided
     return redirect('main-page')
 
 
@@ -42,10 +38,11 @@ def find_contemporaries(request):
 def main_page(request):
     generate_person = request.session.pop('generate_person', False)
     chosen_person_id = request.session.pop('chosen_person_id', None)
+    hpi_threshold = int(request.session.pop('hpi_threshold', '50'))
 
     if generate_person:
         # The flag was set, generate random person
-        random_person_data = random_person(request)
+        random_person_data = random_person(request, hpi_threshold)
         chosen_person_id = random_person_data["id"]
     elif chosen_person_id:
         # Logic to fetch the chosen person's data if an ID is provided
@@ -69,12 +66,15 @@ def main_page(request):
 
 
 # Function to retrieve a random person from the database
-def random_person(request):
+def random_person(request, min_hpi):
     # Get the minimum hpi from request parameters, default to 50 if not provided
     #  min_hpi = int(request.GET.get('min_hpi', 50))
+    valid_persons_above_threshold = valid_persons.filter(hpi__gte=min_hpi)
+    valid_person_count = valid_persons_above_threshold.count()
 
-    random_index = random.randint(0, person_count - 1)
-    person = valid_persons[random_index]  # Direct indexing on the queryset
+    random_index = random.randint(0, valid_person_count - 1)
+    # Direct indexing on the queryset
+    person = valid_persons_above_threshold[random_index]
 
     # Utilize the prepare_person_data function to construct response data
     response_data = prepare_person_data(person)
@@ -175,3 +175,9 @@ def fame_overlap(request, person_id):
     }) for person, score, overlap_result in top_fame_overlaps]
 
     return response_data
+
+
+# Function to generate Wikipedia links for famous people
+def generate_wikipedia_link(name):
+    formatted_name = urllib.parse.quote(name.replace(" ", "_"))
+    return f"https://en.wikipedia.org/wiki/{formatted_name}"
