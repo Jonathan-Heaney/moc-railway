@@ -18,12 +18,19 @@ Map of Contemporaries
         <form action="{% url 'set-generation-flag' %}" method="post">
             {% csrf_token %}
             <button type="submit">Generate Random Person</button>
-            <label for="hpiRange">Minimum Fame Score: </label>
-            <input type="range" name="hpi" id="hpiRange" min="50" max="90" value="50">
+            <label for="hpiRange">Minimum Fame Score: <span id="hpiValue">50</span></label>
+            <input type="range" name="hpi" id="hpiRange" min="50" max="90" value="50"
+            oninput="updateHpiValue(this.value)">
         </form>
 
         {% include "contemporaries/top_overlaps.html" %}
         {% include "contemporaries/fame_overlaps.html" %}
     </div>
+
+    <script>
+        function updateHpiValue(val) {
+            document.getElementById('hpiValue').innerText = val
+        }
+    </script>
     
 {% endblock %}
