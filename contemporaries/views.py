@@ -39,12 +39,14 @@ def find_contemporaries(request):
 def search_person(request):
     query = request.GET.get('q', '').strip()
     if len(query) >= 3:
-        # Assuming 'name' is a field on your FamousPerson model
         people = FamousPerson.objects.filter(
             name__icontains=query).values('id', 'name')[:10]
-        return JsonResponse({'results': list(people)}, safe=False)
-    else:
-        return JsonResponse({'results': []})
+        if people:
+            return JsonResponse({'results': list(people)})
+        else:
+            # No results found
+            return JsonResponse({'message': 'No people found'})
+    return JsonResponse({'results': []})  # Empty or too short query
 
 
 def select_person(request, person_id):

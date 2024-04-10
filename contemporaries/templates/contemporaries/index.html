@@ -40,18 +40,23 @@ Map of Contemporaries
                 fetch(`/search-person?q=${encodeURIComponent(query)}`)
                     .then(response => response.json())
                     .then(data => {
-                        // Check again if the input length is >= 3 before updating the DOM
-                        if (document.getElementById('searchInput').value.length >= 3) {
-                            const resultsContainer = document.getElementById('searchResultsContainer');
-                            resultsContainer.innerHTML = ''; // Clear previous results
-                            data.results.forEach(person => {
-                                const personElement = document.createElement('div');
-                                personElement.textContent = person.name;
-                                personElement.addEventListener('click', () => window.location.href = `/select-person/${person.id}`);
-                                resultsContainer.appendChild(personElement);
-                            });
+                        const resultsContainer = document.getElementById('searchResultsContainer');
+                        // Clear previous results
+                        resultsContainer.innerHTML = '';
+        
+                        // Check if the response contains a 'message' key
+                        if (data.message) {
+                            resultsContainer.textContent = data.message;  // Display "No people found"
                         } else {
-                            document.getElementById('searchResultsContainer').innerHTML = '';
+                            // Check again if the input length is >= 3 before updating the DOM
+                            if (document.getElementById('searchInput').value.length >= 3) {
+                                data.results.forEach(person => {
+                                    const personElement = document.createElement('div');
+                                    personElement.textContent = person.name;
+                                    personElement.addEventListener('click', () => window.location.href = `/select-person/${person.id}`);
+                                    resultsContainer.appendChild(personElement);
+                                });
+                            }
                         }
                     });
             } else {
