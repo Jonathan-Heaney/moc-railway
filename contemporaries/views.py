@@ -61,7 +61,8 @@ def main_page(request):
     return render(request, "contemporaries/index.html", {
         "person": random_person_data,
         "top_overlaps": top_overlaps_data,
-        "fame_overlaps": fame_overlaps_data
+        "fame_overlaps": fame_overlaps_data,
+        "hpi_threshold": hpi_threshold,
     })
 
 

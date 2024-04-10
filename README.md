@@ -28,6 +28,7 @@
 - Python/Django
 - HTML/Django Templating Language
 - CSS
+- Minimal JavaScript
 
 ### What I learned
 
@@ -38,6 +39,9 @@
 - It's possible to nest 'includes' template snippets
 - Not all HTML files need to extend from a base, and they also don't need the HTML skeleton
 - Had a lot of trouble refreshing the page and getting to an actual reset, without generating a new random person. What worked in the end was using @require.POST to set a generation flag, and removing the flag every time the page is rendered with data
+- Use .get() to just get one specific value from the database. .filter() gets a QuerySet which can have multiple values
+- It's possible to include JavaScript in your Django templates
+- Sessions are a really helpful way of storing values across page reloads/state changes
 
 ### Continued development
 
