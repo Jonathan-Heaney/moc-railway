@@ -7,6 +7,7 @@ import urllib.parse
 from collections import namedtuple
 
 
+# Get all the people from the database
 valid_persons = FamousPerson.objects.exclude(
     birthyear__isnull=True
 ).exclude(
@@ -31,16 +32,34 @@ def set_generation_flag(request):
     return redirect('main-page')
 
 
+@require_POST
+def find_contemporaries(request):
+    person_id = request.POST.get('person_id')
+    request.session['chosen_person_id'] = person_id
+    return redirect('main-page')
+
+
 def main_page(request):
-    if request.session.pop('generate_person', False):
-        # The flag was set, generate random person and overlaps
+    generate_person = request.session.pop('generate_person', False)
+    chosen_person_id = request.session.pop('chosen_person_id', None)
+
+    if generate_person:
+        # The flag was set, generate random person
         random_person_data = random_person(request)
         chosen_person_id = random_person_data["id"]
+    elif chosen_person_id:
+        # Logic to fetch the chosen person's data if an ID is provided
+        random_person_data = get_person_by_id(chosen_person_id)
+    else:
+        # The flag was not set or has been cleared, show default state
+        random_person_data = None
+
+    # If we have a person (randomly generated or chosen), generate overlaps
+    if chosen_person_id:
         top_overlaps_data = top_overlap(request, chosen_person_id)
         fame_overlaps_data = fame_overlap(request, chosen_person_id)
     else:
-        # The flag was not set or has been cleared, show default state
-        random_person_data = top_overlaps_data = fame_overlaps_data = None
+        top_overlaps_data = fame_overlaps_data = None
 
     return render(request, "contemporaries/index.html", {
         "person": random_person_data,
@@ -61,6 +80,15 @@ def random_person(request):
     response_data = prepare_person_data(person)
 
     return response_data
+
+
+def get_person_by_id(person_id):
+    try:
+        person = FamousPerson.objects.get(id=person_id)
+        response_data = prepare_person_data(person)
+        return response_data
+    except FamousPerson.DoesNotExist:
+        return None
 
 
 OverlapResult = namedtuple(
