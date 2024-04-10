@@ -12,6 +12,8 @@ Map of Contemporaries
         <h3 class="explainer">Search for a famous historical figure (or click the button to generate a
             random one) and find out whose lives overlapped with theirs!</h3>
         
+        <input type="text" id="searchInput" placeholder="Search for people...">
+        <div id="searchResultsContainer"></div>    
             
         {% include "contemporaries/includes/person-detail.html" %}
 
@@ -31,6 +33,26 @@ Map of Contemporaries
         function updateHpiValue(val) {
             document.getElementById('hpiValue').innerText = val
         }
+
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const query = this.value;
+            if (query.length >= 3) {
+                fetch(`/search-person?q=${encodeURIComponent(query)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const resultsContainer = document.getElementById('searchResultsContainer');
+                        resultsContainer.innerHTML = ''; // Clear previous results
+                        data.results.forEach(person => {
+                            const personElement = document.createElement('div');
+                            personElement.textContent = person.name;
+                            personElement.addEventListener('click', () => window.location.href = `/select-person/${person.id}`);
+                            resultsContainer.appendChild(personElement);
+                        });
+                    });
+            } else {
+                document.getElementById('searchResultsContainer').innerHTML = '';
+            }
+        });
     </script>
     
 {% endblock %}

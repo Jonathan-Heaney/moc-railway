@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_POST
+from django.http import JsonResponse
 import os
 from .models import FamousPerson
 import random
@@ -31,6 +32,22 @@ def set_generation_flag(request):
 @require_POST
 def find_contemporaries(request):
     person_id = request.POST.get('person_id')
+    request.session['chosen_person_id'] = person_id
+    return redirect('main-page')
+
+
+def search_person(request):
+    query = request.GET.get('q', '').strip()
+    if len(query) >= 3:
+        # Assuming 'name' is a field on your FamousPerson model
+        people = FamousPerson.objects.filter(
+            name__icontains=query).values('id', 'name')[:10]
+        return JsonResponse({'results': list(people)}, safe=False)
+    else:
+        return JsonResponse({'results': []})
+
+
+def select_person(request, person_id):
     request.session['chosen_person_id'] = person_id
     return redirect('main-page')
 
