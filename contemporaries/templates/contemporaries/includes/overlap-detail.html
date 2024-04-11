@@ -3,5 +3,5 @@
 <form action="{% url 'find-contemporaries' %}" method="post">
     {% csrf_token %}
     <input type="hidden" name="person_id" value="{{ person.id }}">
-    <button type="submit">Find Contemporaries</button>
+    <button type="submit" class="generate-btn">Find Contemporaries</button>
 </form>

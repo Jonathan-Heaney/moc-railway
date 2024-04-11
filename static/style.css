@@ -71,6 +71,29 @@ body {
   color: #666; /* Dark grey for the "No results" message */
 }
 
+.generate-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.generate-btn:hover {
+  background-color: #0056b3;
+}
+
+.hpi-filter-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+#hpiValue {
+  margin-right: 5px;
+}
+
 @media (min-width: 768px) {
   .title {
     font-size: 3rem;

@@ -27,10 +27,12 @@ Map of Contemporaries
 
         <form action="{% url 'set-generation-flag' %}" method="post">
             {% csrf_token %}
-            <button type="submit">Generate Random Person</button>
-            <label for="hpiRange">Minimum Fame Score: <span id="hpiValue">{{hpi_threshold}}</span></label>
-            <input type="range" name="hpi" id="hpiRange" min="50" max="90" value="{{hpi_threshold}}"
-            oninput="updateHpiValue(this.value)">
+            <button type="submit" class="generate-btn">Generate Random Person</button>
+            <div class="hpi-filter-container">
+                <label for="hpiRange">Minimum Fame Score: <span id="hpiValue">{{hpi_threshold}}</span></label>
+                <input type="range" name="hpi" id="hpiRange" min="50" max="90" value="{{hpi_threshold}}"
+                oninput="updateHpiValue(this.value)">
+            </div>
         </form>
 
         {% include "contemporaries/top_overlaps.html" %}
