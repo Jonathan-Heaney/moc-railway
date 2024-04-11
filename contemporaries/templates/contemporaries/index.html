@@ -5,6 +5,11 @@
 Map of Contemporaries
 {% endblock %}
 
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "style.css" %}">
+{% endblock %}
+
+
 {% block content %}
 
     <div class="container">
@@ -12,8 +17,11 @@ Map of Contemporaries
         <h3 class="explainer">Search for a famous historical figure (or click the button to generate a
             random one) and find out whose lives overlapped with theirs!</h3>
         
-        <input type="text" id="searchInput" placeholder="Search for people...">
-        <div id="searchResultsContainer"></div>    
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for people...">
+            <div id="searchResultsContainer"></div>   
+        </div>
+         
             
         {% include "contemporaries/includes/person-detail.html" %}
 
