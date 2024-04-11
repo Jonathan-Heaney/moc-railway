@@ -40,7 +40,7 @@ def search_person(request):
     query = request.GET.get('q', '').strip()
     if len(query) >= 3:
         people = FamousPerson.objects.filter(
-            name__icontains=query).values('id', 'name')[:10]
+            name__icontains=query).values('id', 'name', 'birthyear', 'deathyear')[:10]
         if people:
             return JsonResponse({'results': list(people)})
         else:
@@ -130,12 +130,14 @@ def calculate_overlap(person1, person2):
 def prepare_person_data(person, extra_data=None):
     extra_data = extra_data or {}
     wikipedia_link = generate_wikipedia_link(person.name)
+    formatted_lifespan = format_lifespan(person.birthyear, person.deathyear)
     person_data = {
         'id': person.id,
         'name': person.name,
         'occupation': person.occupation,
         'birthyear': person.birthyear,
         'deathyear': person.deathyear,
+        'lifespan': formatted_lifespan,
         'hpi': person.hpi,
         'wikipedia_link': wikipedia_link,
     }
@@ -201,3 +203,20 @@ def fame_overlap(request, person_id):
 def generate_wikipedia_link(name):
     formatted_name = urllib.parse.quote(name.replace(" ", "_"))
     return f"https://en.wikipedia.org/wiki/{formatted_name}"
+
+
+def format_lifespan(birthyear, deathyear):
+    if birthyear > 0:
+        return f"{birthyear} - {deathyear}"
+
+    formatted_birthyear = format_year(birthyear)
+    formatted_deathyear = format_year(deathyear)
+
+    return f"{formatted_birthyear} - {formatted_deathyear}"
+
+
+def format_year(year):
+    if year < 0:
+        return f"{abs(year)} BC"
+    else:
+        return f"{year} AD"

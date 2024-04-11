@@ -52,7 +52,7 @@ Map of Contemporaries
                             if (document.getElementById('searchInput').value.length >= 3) {
                                 data.results.forEach(person => {
                                     const personElement = document.createElement('div');
-                                    personElement.textContent = person.name;
+                                    personElement.textContent = `${person.name} (${person.birthyear} - ${person.deathyear})`
                                     personElement.addEventListener('click', () => window.location.href = `/select-person/${person.id}`);
                                     resultsContainer.appendChild(personElement);
                                 });

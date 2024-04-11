@@ -42,6 +42,7 @@
 - Use .get() to just get one specific value from the database. .filter() gets a QuerySet which can have multiple values
 - It's possible to include JavaScript in your Django templates
 - Sessions are a really helpful way of storing values across page reloads/state changes
+- Setting 'window.location.href' in JavaScript is a way to set the URL of the current page. So going to that URL triggers a Django view function associated with that URL - that's how my search function works
 
 ### Continued development
 
