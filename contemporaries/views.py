@@ -174,8 +174,7 @@ def top_overlap(request, person_id):
     response_data = [prepare_person_data(person, {
         'overlap_score': score,
         'percentage': overlap_result.percentage,
-        'start': overlap_result.start,
-        'end': overlap_result.end,
+        'overlap_string': format_lifespan(overlap_result.start, overlap_result.end),
         'years': overlap_result.years,
     }) for person, score, overlap_result in top_overlaps]
 
@@ -191,8 +190,7 @@ def fame_overlap(request, person_id):
     response_data = [prepare_person_data(person, {
         'fame_overlap_score': score,
         'percentage': overlap_result.percentage,
-        'start': overlap_result.start,
-        'end': overlap_result.end,
+        'overlap_string': format_lifespan(overlap_result.start, overlap_result.end),
         'years': overlap_result.years,
     }) for person, score, overlap_result in top_fame_overlaps]
 
