@@ -122,8 +122,31 @@ body {
   font-weight: bold;
 }
 
+.list-title {
+  text-align: center;
+}
+
+.lists {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  margin-bottom: 20px;
+}
+
 @media (min-width: 768px) {
   .title {
     font-size: 3rem;
+  }
+
+  .lists {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .list {
+    text-align: center;
+    width: 48%; /* Slightly less than half the container width to fit side by side */
   }
 }

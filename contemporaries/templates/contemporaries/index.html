@@ -36,8 +36,10 @@ Map of Contemporaries
             </div>
         </form>
 
-        {% include "contemporaries/top_overlaps.html" %}
-        {% include "contemporaries/fame_overlaps.html" %}
+        <div class="lists">
+            {% include "contemporaries/top_overlaps.html" %}
+            {% include "contemporaries/fame_overlaps.html" %}
+        </div>
     </div>
 
     <script src="{% static "script.js" %}"></script>

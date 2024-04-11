@@ -1,6 +1,8 @@
 {% if fame_overlaps %}
-    <h1 class="list-title">Fame Overlap</h1>
-    {% for person in fame_overlaps %}
-        {% include "contemporaries/includes/person-detail.html" %}
-    {% endfor %}
+    <div class="list">
+        <h1 class="list-title">Fame Overlap</h1>
+        {% for person in fame_overlaps %}
+            {% include "contemporaries/includes/person-detail.html" %}
+        {% endfor %}
+    </div>
 {% endif %}
