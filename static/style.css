@@ -25,6 +25,52 @@ body {
   font-size: 1rem;
 }
 
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Adjust based on your layout */
+  margin: 20px auto;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ddd; /* Light grey border */
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensure padding doesn't increase the input's size */
+  font-size: 16px; /* Larger font size for better readability */
+}
+
+#searchResultsContainer {
+  list-style: none;
+  margin-top: 10px;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #ddd; /* Light grey border to match the input */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  position: absolute;
+  width: 100%;
+  z-index: 1; /* Ensure the list appears above other content */
+}
+
+.search-container li {
+  padding: 10px;
+  border-bottom: 1px solid #eee; /* Very light grey for separating items */
+  cursor: pointer;
+  transition: background-color 0.2s; /* Smooth background transition on hover */
+}
+
+.search-container li:hover {
+  background-color: #f9f9f9; /* Light grey background on hover */
+}
+
+.no-results {
+  padding: 20px;
+  text-align: center;
+  color: #666; /* Dark grey for the "No results" message */
+}
+
 @media (min-width: 768px) {
   .title {
     font-size: 3rem;

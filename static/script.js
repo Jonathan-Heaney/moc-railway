@@ -35,12 +35,15 @@ function searchPeople() {
 
         // Check if the response contains a 'message' key
         if (data.message) {
-          searchResultsContainer.textContent = data.message; // Display "No people found"
+          const noResults = document.createElement('div');
+          noResults.textContent = data.message;
+          noResults.className = 'no-results';
+          searchResultsContainer.appendChild(noResults);
         } else {
           // Check again if the input length is >= 3 before updating the DOM
           if (searchInput.value.length >= 3) {
             data.results.forEach((person) => {
-              const personElement = document.createElement('div');
+              const personElement = document.createElement('li');
               personElement.textContent = `${person.name} (${formatYears(
                 person.birthyear,
                 person.deathyear
