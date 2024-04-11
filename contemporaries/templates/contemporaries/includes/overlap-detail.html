@@ -1,5 +1,6 @@
-<p>Overlap Percentage: {{ person.percentage }}% </p>
-<p>Overlap Years: {{ person.overlap_string }} ({{person.years}} years) </p>
+<p><span class="info">Overlap Percentage:</span>  {{ person.percentage }}% </p>
+<p><span class="info">Overlap Years:</span>  {{ person.overlap_string }} ({{person.years}} years) </p>
+<br />
 <form action="{% url 'find-contemporaries' %}" method="post">
     {% csrf_token %}
     <input type="hidden" name="person_id" value="{{ person.id }}">

@@ -1,9 +1,18 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static "style.css" %}">
+
 {% if person %}
+    {% if not person.percentage %}
+    <div class="random-person-card person-detail">
+    {% else %}
     <div class="person-detail">
+    {% endif %}
         <a href="{{person.wikipedia_link}}" target="_blank"><h2>{{person.name}}</h2></a> 
+        <br />
         <p>{{person.occupation}}</p>
         <p>{{person.lifespan}}</p>
-        <p>Fame Score: {{person.hpi}}</p>
+        <p><span class="info">Fame Score:</span> {{person.hpi}}</p>
         {% if person.percentage %}
             {% include "contemporaries/includes/overlap-detail.html" %}
         {% endif %}

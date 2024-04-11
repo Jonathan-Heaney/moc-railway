@@ -22,10 +22,11 @@ Map of Contemporaries
             <ul id="searchResultsContainer"></ul>   
         </div>
          
-            
-        {% include "contemporaries/includes/person-detail.html" %}
+        <div class="random-person-container">   
+            {% include "contemporaries/includes/person-detail.html" %}
+        </div> 
 
-        <form action="{% url 'set-generation-flag' %}" method="post">
+        <form class="form-container"  action="{% url 'set-generation-flag' %}" method="post">
             {% csrf_token %}
             <button type="submit" class="generate-btn">Generate Random Person</button>
             <div class="hpi-filter-container">

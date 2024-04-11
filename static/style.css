@@ -29,7 +29,7 @@ body {
   position: relative;
   width: 100%;
   max-width: 400px; /* Adjust based on your layout */
-  margin: 20px auto;
+  margin: 20px auto 40px;
 }
 
 #searchInput {
@@ -71,7 +71,12 @@ body {
   color: #666; /* Dark grey for the "No results" message */
 }
 
+.form-container {
+  text-align: center;
+}
+
 .generate-btn {
+  text-align: center;
   padding: 10px 20px;
   border: none;
   background-color: #007bff;
@@ -92,6 +97,29 @@ body {
 
 #hpiValue {
   margin-right: 5px;
+}
+
+.random-person-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.person-detail {
+  text-align: center;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 100%;
+}
+
+.random-person-card {
+  display: inline-block;
+  padding: 1rem 3rem;
+}
+
+.info {
+  font-weight: bold;
 }
 
 @media (min-width: 768px) {
