@@ -6,7 +6,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  margin: 5rem;
+  margin: 1rem;
 }
 
 .container {
@@ -136,6 +136,10 @@ body {
 }
 
 @media (min-width: 768px) {
+  body {
+    margin: 5rem;
+  }
+
   .title {
     font-size: 3rem;
   }
