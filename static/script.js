@@ -8,7 +8,9 @@ function updateHpiValue(val) {
   hpiValue.innerText = val;
 }
 
-searchInput.addEventListener('input', function () {
+searchInput.addEventListener('input', searchPeople);
+
+function searchPeople() {
   const query = this.value;
   if (query.length >= 3) {
     fetch(`/search-person?q=${encodeURIComponent(query)}`)
@@ -38,4 +40,4 @@ searchInput.addEventListener('input', function () {
   } else {
     searchResultsContainer.innerHTML = '';
   }
-});
+}
