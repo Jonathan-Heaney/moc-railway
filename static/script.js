@@ -8,6 +8,20 @@ function updateHpiValue(val) {
   hpiValue.innerText = val;
 }
 
+const formatYears = (birthyear, deathyear) => {
+  // If both years are AD, omit AD suffix
+  if (birthyear > 0) {
+    return `${birthyear} - ${deathyear}`;
+  }
+
+  const formatYear = (year) => Math.abs(year) + (year < 0 ? ' BC' : ' AD');
+
+  let formattedBirthyear = formatYear(birthyear);
+  let formattedDeathyear = formatYear(deathyear);
+
+  return `${formattedBirthyear} - ${formattedDeathyear}`;
+};
+
 searchInput.addEventListener('input', searchPeople);
 
 function searchPeople() {
@@ -27,7 +41,10 @@ function searchPeople() {
           if (searchInput.value.length >= 3) {
             data.results.forEach((person) => {
               const personElement = document.createElement('div');
-              personElement.textContent = `${person.name} (${person.birthyear} - ${person.deathyear})`;
+              personElement.textContent = `${person.name} (${formatYears(
+                person.birthyear,
+                person.deathyear
+              )})`;
               personElement.addEventListener(
                 'click',
                 () => (window.location.href = `/select-person/${person.id}`)
