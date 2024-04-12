@@ -69,9 +69,21 @@ const occupationColors = {
   BULLFIGHTER: '#EB984E', // Pumpkin Orange
 };
 
-export const defaultColor = '#95a5a6'; // Light Gray as a fallback
+const defaultColor = '#95a5a6'; // Light Gray as a fallback
 
-export const getOccupationColor = (occupation) => {
+const getOccupationColor = (occupation) => {
   const formattedOccupation = occupation.replace(/\s+/g, '_').toUpperCase();
   return occupationColors[formattedOccupation] || defaultColor;
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.person-detail').forEach((card) => {
+    const occupation = card.dataset.occupation;
+    const color = getOccupationColor(occupation);
+    card.style.border = `3px solid ${color}`;
+    const anchor = card.querySelector('a');
+    anchor.style.color = color;
+    const occupationText = card.querySelector('.occupation-text');
+    occupationText.style.color = color;
+  });
+});

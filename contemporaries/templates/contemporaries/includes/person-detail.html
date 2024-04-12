@@ -1,17 +1,16 @@
 {% load static %}
 
 <link rel="stylesheet" href="{% static "style.css" %}">
-<script src="{% static "occupationColors.js" %}"></script>
 
 {% if person %}
     {% if not person.percentage %}
     <div class="random-person-card person-detail" data-occupation="{{person.occupation}}">
     {% else %}
-    <div class="person-detail">
+    <div class="person-detail" data-occupation="{{person.occupation}}">
     {% endif %}
         <a href="{{person.wikipedia_link}}" target="_blank"><h2>{{person.name}}</h2></a> 
         <br />
-        <p>{{person.occupation}}</p>
+        <p class="occupation-text">{{person.occupation}}</p>
         <p>{{person.lifespan}}</p>
         <p><span class="info">Fame Score:</span> {{person.hpi}}</p>
         {% if person.percentage %}
