@@ -106,7 +106,6 @@ body {
 
 .person-detail {
   text-align: center;
-  border: 1px solid #ddd;
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
@@ -114,8 +113,12 @@ body {
 }
 
 .random-person-card {
+  text-align: center;
   display: inline-block;
-  padding: 1rem 3rem;
+  margin: 10px 0;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  max-width: 100%;
 }
 
 .info {
@@ -145,6 +148,10 @@ body {
   .explainer {
     font-size: 0.6rem;
   }
+
+  .random-person-card {
+    padding: 10px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -169,13 +176,13 @@ body {
     width: auto; /* Adjust width automatically to content */
     max-width: 48%; /* Ensures that it doesn't exceed half the container's width */
     box-sizing: border-box; /* Includes padding and border in the element's total width and height */
-    margin: 1%; /* Provides space between the lists */
+    /* margin: 1%; Provides space between the lists */
     padding: 1em; /* Adjust padding as needed for your design */
   }
 
   .person-detail {
     width: auto; /* Adjust width automatically to content, within the confines of the .list */
-    margin-bottom: 1em; /* Space between cards */
+    /* margin-bottom: 1em; Space between cards */
     /* Add other styles for border, padding etc. */
   }
 }
