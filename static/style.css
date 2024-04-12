@@ -129,10 +129,22 @@ body {
 .lists {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .list {
   margin-bottom: 20px;
+  max-width: 500px;
+}
+
+@media (max-width: 300px) {
+  .title {
+    font-size: 0.8rem;
+  }
+
+  .explainer {
+    font-size: 0.6rem;
+  }
 }
 
 @media (min-width: 768px) {
