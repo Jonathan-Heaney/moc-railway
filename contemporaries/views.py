@@ -8,16 +8,6 @@ import urllib.parse
 from collections import namedtuple
 
 
-# Get all the people from the database
-valid_persons = FamousPerson.objects.exclude(
-    birthyear__isnull=True
-).exclude(
-    deathyear__isnull=True
-)
-
-person_count = valid_persons.count()
-
-
 # Create your views here.
 
 
@@ -89,11 +79,10 @@ def main_page(request):
 def random_person(request, min_hpi):
     # Get the minimum hpi from request parameters, default to 50 if not provided
     #  min_hpi = int(request.GET.get('min_hpi', 50))
-    valid_persons_above_threshold = valid_persons.filter(hpi__gte=min_hpi)
+    valid_persons_above_threshold = FamousPerson.objects.filter(
+        hpi__gte=min_hpi)
     valid_person_count = valid_persons_above_threshold.count()
-
     random_index = random.randint(0, valid_person_count - 1)
-    # Direct indexing on the queryset
     person = valid_persons_above_threshold[random_index]
 
     # Utilize the prepare_person_data function to construct response data
@@ -146,7 +135,7 @@ def prepare_person_data(person, extra_data=None):
 
 
 def calculate_overlaps(chosen_person, score_func):
-    all_people = valid_persons.exclude(id=chosen_person.id)
+    all_people = FamousPerson.objects.exclude(id=chosen_person.id)
     overlaps = []
 
     for person in all_people:
@@ -166,7 +155,7 @@ def fame_overlap_score(overlap_result, person):
 
 
 def top_overlap(request, person_id):
-    chosen_person = valid_persons.get(id=person_id)
+    chosen_person = FamousPerson.objects.get(id=person_id)
     overlaps = calculate_overlaps(chosen_person, overlap_score)
     overlaps.sort(key=lambda x: x[1], reverse=True)
     top_overlaps = overlaps[:10]
@@ -182,7 +171,7 @@ def top_overlap(request, person_id):
 
 
 def fame_overlap(request, person_id):
-    chosen_person = valid_persons.get(id=person_id)
+    chosen_person = FamousPerson.objects.get(id=person_id)
     fame_overlaps = calculate_overlaps(chosen_person, fame_overlap_score)
     fame_overlaps.sort(key=lambda x: x[1], reverse=True)
     top_fame_overlaps = fame_overlaps[:10]
