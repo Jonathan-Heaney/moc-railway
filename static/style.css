@@ -145,12 +145,25 @@ body {
   }
 
   .lists {
+    display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap; /* Allows items to wrap onto the next line */
   }
 
   .list {
-    text-align: center;
-    width: 48%; /* Slightly less than half the container width to fit side by side */
+    display: flex;
+    flex-direction: column; /* Stacks cards vertically */
+    width: auto; /* Adjust width automatically to content */
+    max-width: 48%; /* Ensures that it doesn't exceed half the container's width */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    margin: 1%; /* Provides space between the lists */
+    padding: 1em; /* Adjust padding as needed for your design */
+  }
+
+  .person-detail {
+    width: auto; /* Adjust width automatically to content, within the confines of the .list */
+    margin-bottom: 1em; /* Space between cards */
+    /* Add other styles for border, padding etc. */
   }
 }
