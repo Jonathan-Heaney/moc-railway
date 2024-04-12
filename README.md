@@ -43,7 +43,13 @@
 - It's possible to include JavaScript in your Django templates
 - Sessions are a really helpful way of storing values across page reloads/state changes
 - Setting 'window.location.href' in JavaScript is a way to set the URL of the current page. So going to that URL triggers a Django view function associated with that URL - that's how my search function works
+- Always do hard refreshes to make sure old JS files aren't being cached
+- Don't link to script files from a child template that gets used multiple times in other templates - all the variables will get duplicated, causing lots of console errors
 
 ### Continued development
+
+- Work to make data searching more efficient - the people and lists load very slowly right now
+- Come up with a more elegant solution for creating the occupation colors - the JS function that waits for the DOM content to load is a little hacky
+- Fix the CSS so that the overlap list cards don't spread out across the page
 
 ### Useful resources
