@@ -39,7 +39,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = getenv("IS_DEVELOPMENT", True)
 
 ALLOWED_HOSTS = [
-    getenv("APP_HOST"), 'contemporari.es', 'www.contemporari.es'
+    getenv("APP_HOST"), 'contemporari.es', 'www.contemporari.es', '127.0.0.1', '0.0.0.0'
 ]
 
 
@@ -47,6 +47,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'contemporaries',
+    'sslserver',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

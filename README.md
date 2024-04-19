@@ -51,5 +51,8 @@
 - Work to make data searching more efficient - the people and lists load very slowly right now
 - Come up with a more elegant solution for creating the occupation colors - the JS function that waits for the DOM content to load is a little hacky
 - Fix the CSS so that the overlap list cards don't spread out across the page
+- "Load more" button
+- More explanations for how the site works and what everything is doing
+- Ability to filter by occupation, to show only people within the same profession or other specific professions
 
 ### Useful resources
