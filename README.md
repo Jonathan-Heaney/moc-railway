@@ -55,5 +55,6 @@
 - More explanations for how the site works and what everything is doing
 - Ability to filter by occupation, to show only people within the same profession or other specific professions
 - Switch to Render for deployment
+- Update remote origin
 
 ### Useful resources
