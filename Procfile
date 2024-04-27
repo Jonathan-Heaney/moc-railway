@@ -1,1 +1,1 @@
-web: gunicorn moc.wsgi --log-file -
+web: python manage.py collectstatic --noinput && gunicorn moc.wsgi --log-file -
