@@ -45,6 +45,7 @@
 - Setting 'window.location.href' in JavaScript is a way to set the URL of the current page. So going to that URL triggers a Django view function associated with that URL - that's how my search function works
 - Always do hard refreshes to make sure old JS files aren't being cached
 - Don't link to script files from a child template that gets used multiple times in other templates - all the variables will get duplicated, causing lots of console errors
+- Whitenoise was really helpful for managing my static files, I'll use that with Django going forward
 
 ### Continued development
 
@@ -54,7 +55,5 @@
 - "Load more" button
 - More explanations for how the site works and what everything is doing
 - Ability to filter by occupation, to show only people within the same profession or other specific professions
-- Switch to Render for deployment
-- Update remote origin
 
 ### Useful resources
