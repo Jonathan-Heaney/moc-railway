@@ -1,0 +1,1 @@
+web: gunicorn moc.wsgi --log-file -

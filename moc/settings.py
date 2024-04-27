@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
 from os import getenv
 from dotenv import load_dotenv
 
@@ -39,8 +38,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["moc-render.onrender.com", "localhost",
-                 "127.0.0.1", "contemporari.es", "www.contemporari.es"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -100,13 +98,9 @@ DATABASES = {
         'USER': DB_USERNAME,
         'PASSWORD': DB_PASSWORD,
         'HOST': DB_HOST,
-        'PORT': DB_PORT,
+        'PORT': DB_PORT
     }
 }
-
-database_url = os.environ.get("DATABASE_URL")
-
-DATABASES["default"] = dj_database_url.parse(database_url)
 
 
 # Password validation
