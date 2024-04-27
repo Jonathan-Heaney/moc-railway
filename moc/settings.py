@@ -38,7 +38,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['web-production-c070.up.railway.app',
+                 'www.contemporari.es', 'contemporari.es', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -147,7 +148,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static/"
+    BASE_DIR / "static"
 ]
 
 
@@ -155,3 +156,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = ['https://web-production-c070.up.railway.app']
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
