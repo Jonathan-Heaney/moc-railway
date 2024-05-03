@@ -198,3 +198,540 @@ body {
 .occupation-politician .occupation-text {
   color: #3498db;
 }
+
+/* CSS Classes for Occupation Colors */
+.occupation-actor {
+  border-color: #e74c3c;
+}
+.occupation-actor a,
+.occupation-actor .occupation-text {
+  color: #e74c3c;
+}
+
+.occupation-writer {
+  border-color: #9b59b6;
+}
+.occupation-writer a,
+.occupation-writer .occupation-text {
+  color: #9b59b6;
+}
+
+.occupation-singer {
+  border-color: #1abc9c;
+}
+.occupation-singer a,
+.occupation-singer .occupation-text {
+  color: #1abc9c;
+}
+
+.occupation-athlete {
+  border-color: #f1c40f;
+}
+.occupation-athlete a,
+.occupation-athlete .occupation-text {
+  color: #f1c40f;
+}
+
+.occupation-musician {
+  border-color: #2ecc71;
+}
+.occupation-musician a,
+.occupation-musician .occupation-text {
+  color: #2ecc71;
+}
+
+.occupation-religious-figure {
+  border-color: #d35400;
+}
+.occupation-religious-figure a,
+.occupation-religious-figure .occupation-text {
+  color: #d35400;
+}
+
+.occupation-film-director {
+  border-color: #7f8c8d;
+}
+.occupation-film-director a,
+.occupation-film-director .occupation-text {
+  color: #7f8c8d;
+}
+
+.occupation-military-personnel {
+  border-color: #34495e;
+}
+.occupation-military-personnel a,
+.occupation-military-personnel .occupation-text {
+  color: #34495e;
+}
+
+.occupation-painter {
+  border-color: #16a085;
+}
+.occupation-painter a,
+.occupation-painter .occupation-text {
+  color: #16a085;
+}
+
+.occupation-composer {
+  border-color: #8e44ad;
+}
+.occupation-composer a,
+.occupation-composer .occupation-text {
+  color: #8e44ad;
+}
+
+.occupation-philosopher {
+  border-color: #27ae60;
+}
+.occupation-philosopher a,
+.occupation-philosopher .occupation-text {
+  color: #27ae60;
+}
+
+.occupation-nobleman {
+  border-color: #2980b9;
+}
+.occupation-nobleman a,
+.occupation-nobleman .occupation-text {
+  color: #2980b9;
+}
+
+.occupation-biologist {
+  border-color: #f39c12;
+}
+.occupation-biologist a,
+.occupation-biologist .occupation-text {
+  color: #f39c12;
+}
+
+.occupation-mathematician {
+  border-color: #c0392b;
+}
+.occupation-mathematician a,
+.occupation-mathematician .occupation-text {
+  color: #c0392b;
+}
+
+.occupation-physicist {
+  border-color: #e67e22;
+}
+.occupation-physicist a,
+.occupation-physicist .occupation-text {
+  color: #e67e22;
+}
+
+.occupation-companion {
+  border-color: #95a5a6;
+}
+.occupation-companion a,
+.occupation-companion .occupation-text {
+  color: #95a5a6;
+}
+
+.occupation-businessperson {
+  border-color: #bdc3c7;
+}
+.occupation-businessperson a,
+.occupation-businessperson .occupation-text {
+  color: #bdc3c7;
+}
+
+.occupation-social-activist {
+  border-color: #6c3483;
+}
+.occupation-social-activist a,
+.occupation-social-activist .occupation-text {
+  color: #6c3483;
+}
+
+.occupation-astronomer {
+  border-color: #138d75;
+}
+.occupation-astronomer a,
+.occupation-astronomer .occupation-text {
+  color: #138d75;
+}
+
+.occupation-astronaut {
+  border-color: #d68910;
+}
+.occupation-astronaut a,
+.occupation-astronaut .occupation-text {
+  color: #d68910;
+}
+
+.occupation-chemist {
+  border-color: #2471a3;
+}
+.occupation-chemist a,
+.occupation-chemist .occupation-text {
+  color: #2471a3;
+}
+
+.occupation-physician {
+  border-color: #a04000;
+}
+.occupation-physician a,
+.occupation-physician .occupation-text {
+  color: #a04000;
+}
+
+.occupation-architect {
+  border-color: #717d7e;
+}
+.occupation-architect a,
+.occupation-architect .occupation-text {
+  color: #717d7e;
+}
+
+.occupation-explorer {
+  border-color: #283747;
+}
+.occupation-explorer a,
+.occupation-explorer .occupation-text {
+  color: #283747;
+}
+
+.occupation-inventor {
+  border-color: #1b4f72;
+}
+.occupation-inventor a,
+.occupation-inventor .occupation-text {
+  color: #1b4f72;
+}
+
+.occupation-historian {
+  border-color: #cb4335;
+}
+.occupation-historian a,
+.occupation-historian .occupation-text {
+  color: #cb4335;
+}
+
+.occupation-engineer {
+  border-color: #ca6f1e;
+}
+.occupation-engineer a,
+.occupation-engineer .occupation-text {
+  color: #ca6f1e;
+}
+
+.occupation-economist {
+  border-color: #a9cce3;
+}
+.occupation-economist a,
+.occupation-economist .occupation-text {
+  color: #a9cce3;
+}
+
+.occupation-extremist {
+  border-color: #d5dbdb;
+}
+.occupation-extremist a,
+.occupation-extremist .occupation-text {
+  color: #d5dbdb;
+}
+
+.occupation-computer-scientist {
+  border-color: #d98880;
+}
+.occupation-computer-scientist a,
+.occupation-computer-scientist .occupation-text {
+  color: #d98880;
+}
+
+.occupation-sculptor {
+  border-color: #d0ece7;
+}
+.occupation-sculptor a,
+.occupation-sculptor .occupation-text {
+  color: #d0ece7;
+}
+
+.occupation-psychologist {
+  border-color: #aed6f1;
+}
+.occupation-psychologist a,
+.occupation-psychologist .occupation-text {
+  color: #aed6f1;
+}
+
+.occupation-comic-artist {
+  border-color: #a3e4d7;
+}
+.occupation-comic-artist a,
+.occupation-comic-artist .occupation-text {
+  color: #a3e4d7;
+}
+
+.occupation-linguist {
+  border-color: #f9e79f;
+}
+.occupation-linguist a,
+.occupation-linguist .occupation-text {
+  color: #f9e79f;
+}
+
+.occupation-journalist {
+  border-color: #f1948a;
+}
+.occupation-journalist a,
+.occupation-journalist .occupation-text {
+  color: #f1948a;
+}
+
+.occupation-presenter {
+  border-color: #c39bd3;
+}
+.occupation-presenter a,
+.occupation-presenter .occupation-text {
+  color: #c39bd3;
+}
+
+.occupation-photographer {
+  border-color: #7fb3d5;
+}
+.occupation-photographer a,
+.occupation-photographer .occupation-text {
+  color: #7fb3d5;
+}
+
+.occupation-archaeologist {
+  border-color: #76d7c4;
+}
+.occupation-archaeologist a,
+.occupation-archaeologist .occupation-text {
+  color: #76d7c4;
+}
+
+.occupation-conductor {
+  border-color: #f7dc6f;
+}
+.occupation-conductor a,
+.occupation-conductor .occupation-text {
+  color: #f7dc6f;
+}
+
+.occupation-comedian {
+  border-color: #85c1e9;
+}
+.occupation-comedian a,
+.occupation-comedian .occupation-text {
+  color: #85c1e9;
+}
+
+.occupation-producer {
+  border-color: #bb8fce;
+}
+.occupation-producer a,
+.occupation-producer .occupation-text {
+  color: #bb8fce;
+}
+
+.occupation-designer {
+  border-color: #f0b27a;
+}
+.occupation-designer a,
+.occupation-designer .occupation-text {
+  color: #f0b27a;
+}
+
+.occupation-artist {
+  border-color: #52be80;
+}
+.occupation-artist a,
+.occupation-artist .occupation-text {
+  color: #52be80;
+}
+
+.occupation-dancer {
+  border-color: #e59866;
+}
+.occupation-dancer a,
+.occupation-dancer .occupation-text {
+  color: #e59866;
+}
+
+.occupation-anthropologist {
+  border-color: #fad7a0;
+}
+.occupation-anthropologist a,
+.occupation-anthropologist .occupation-text {
+  color: #fad7a0;
+}
+
+.occupation-lawyer {
+  border-color: #cd6155;
+}
+.occupation-lawyer a,
+.occupation-lawyer .occupation-text {
+  color: #cd6155;
+}
+
+.occupation-geographer {
+  border-color: #f5cba7;
+}
+.occupation-geographer a,
+.occupation-geographer .occupation-text {
+  color: #f5cba7;
+}
+
+.occupation-geologist {
+  border-color: #5499c7;
+}
+.occupation-geologist a,
+.occupation-geologist .occupation-text {
+  color: #5499c7;
+}
+
+.occupation-american-football-player {
+  border-color: #48c9b0;
+}
+.occupation-american-football-player a,
+.occupation-american-football-player .occupation-text {
+  color: #48c9b0;
+}
+
+.occupation-sociologist {
+  border-color: #f7f9f9;
+}
+.occupation-sociologist a,
+.occupation-sociologist .occupation-text {
+  color: #f7f9f9;
+}
+
+.occupation-mafioso {
+  border-color: #b03a2e;
+}
+.occupation-mafioso a,
+.occupation-mafioso .occupation-text {
+  color: #b03a2e;
+}
+
+.occupation-diplomat {
+  border-color: #aab7b8;
+}
+.occupation-diplomat a,
+.occupation-diplomat .occupation-text {
+  color: #aab7b8;
+}
+
+.occupation-pilot {
+  border-color: #e6b0aa;
+}
+.occupation-pilot a,
+.occupation-pilot .occupation-text {
+  color: #e6b0aa;
+}
+
+.occupation-judge {
+  border-color: #1f618d;
+}
+.occupation-judge a,
+.occupation-judge .occupation-text {
+  color: #1f618d;
+}
+
+.occupation-fashion-designer {
+  border-color: #7dcea0;
+}
+.occupation-fashion-designer a,
+.occupation-fashion-designer .occupation-text {
+  color: #7dcea0;
+}
+
+.occupation-occultist {
+  border-color: #f5b7b1;
+}
+.occupation-occultist a,
+.occupation-occultist .occupation-text {
+  color: #f5b7b1;
+}
+
+.occupation-political-scientist {
+  border-color: #154360;
+}
+.occupation-political-scientist a,
+.occupation-political-scientist .occupation-text {
+  color: #154360;
+}
+
+.occupation-pirate {
+  border-color: #7d6608;
+}
+.occupation-pirate a,
+.occupation-pirate .occupation-text {
+  color: #7d6608;
+}
+
+.occupation-public-worker {
+  border-color: #76448a;
+}
+.occupation-public-worker a,
+.occupation-public-worker .occupation-text {
+  color: #76448a;
+}
+
+.occupation-celebrity {
+  border-color: #1abc9c;
+}
+.occupation-celebrity a,
+.occupation-celebrity .occupation-text {
+  color: #1abc9c;
+}
+
+.occupation-magician {
+  border-color: #2e4053;
+}
+.occupation-magician a,
+.occupation-magician .occupation-text {
+  color: #2e4053;
+}
+
+.occupation-statistician {
+  border-color: #45b39d;
+}
+.occupation-statistician a,
+.occupation-statistician .occupation-text {
+  color: #45b39d;
+}
+
+.occupation-inspiration {
+  border-color: #34495e;
+}
+.occupation-inspiration a,
+.occupation-inspiration .occupation-text {
+  color: #34495e;
+}
+
+.occupation-chef {
+  border-color: #58d68d;
+}
+.occupation-chef a,
+.occupation-chef .occupation-text {
+  color: #58d68d;
+}
+
+.occupation-critic {
+  border-color: #5dade2;
+}
+.occupation-critic a,
+.occupation-critic .occupation-text {
+  color: #5dade2;
+}
+
+.occupation-mountaineer {
+  border-color: #f4d03f;
+}
+.occupation-mountaineer a,
+.occupation-mountaineer .occupation-text {
+  color: #f4d03f;
+}
+
+.occupation-bullfighter {
+  border-color: #eb984e;
+}
+.occupation-bullfighter a,
+.occupation-bullfighter .occupation-text {
+  color: #eb984e;
+}
