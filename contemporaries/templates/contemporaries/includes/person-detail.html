@@ -1,4 +1,6 @@
 {% load static %}
+{% load custom_filters %}
+
 
 <link rel="stylesheet" href="{% static "style.css" %}">
 
@@ -6,7 +8,7 @@
     {% if not person.percentage %}
     <div class="random-person-card person-detail" data-occupation="{{person.occupation}}">
     {% else %}
-    <div class="person-detail" data-occupation="{{person.occupation}}">
+    <div class="person-detail {{ person.occupation|css_class }}">
     {% endif %}
         <a href="{{person.wikipedia_link}}" target="_blank"><h2>{{person.name}}</h2></a> 
         <br />
