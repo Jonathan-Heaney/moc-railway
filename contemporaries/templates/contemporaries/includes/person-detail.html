@@ -6,7 +6,7 @@
 
 {% if person %}
     {% if not person.percentage %}
-    <div class="random-person-card person-detail" data-occupation="{{person.occupation}}">
+    <div class="random-person-card person-detail {{ person.occupation|css_class }}">
     {% else %}
     <div class="person-detail {{ person.occupation|css_class }}">
     {% endif %}

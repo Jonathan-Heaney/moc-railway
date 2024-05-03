@@ -109,6 +109,7 @@ body {
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
+  border: 3px solid;
   max-width: 100%;
 }
 
@@ -190,16 +191,10 @@ body {
 /* Occupation colors */
 
 .occupation-politician {
-  border: 3px solid #3498db; /* Blue */
+  border-color: #3498db; /* Blue */
+}
+
+.occupation-politician a,
+.occupation-politician .occupation-text {
   color: #3498db;
-}
-
-.occupation-actor {
-  border-color: #e74c3c; /* Red */
-  color: #e74c3c;
-}
-
-.occupation-writer {
-  border-color: #9b59b6; /* Purple */
-  color: #9b59b6;
 }
